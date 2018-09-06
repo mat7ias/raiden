@@ -160,7 +160,7 @@ jobs:
       install: .travis/install.sh
       script:
         - . .travis/set_tag.sh
-        - make bundle-docker
+        - REPO=${TRAVIS_REPO_SLUG} RAIDENVERSION=${TRAVIS_COMMIT} make bundle-docker
         # Make sure the produced binary works
         - tar -xvzf -C dist raiden-{RAIDENVERSION}-linux.tar.gz
         - dist/raiden-*-linux smoketest

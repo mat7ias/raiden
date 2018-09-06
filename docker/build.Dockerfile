@@ -33,7 +33,11 @@ ARG RAIDENVERSION=master
 ADD https://api.github.com/repos/${REPO}/commits/${RAIDENVERSION} /dev/null
 
 # clone raiden repo + install dependencies
-RUN git clone -b ${RAIDENVERSION} https://github.com/${REPO}
+RUN git clone https://github.com/${REPO} && \
+    cd raiden && \
+    git fetch --tags && \
+    git reset --hard ${RAIDENVERSION}
+
 WORKDIR /raiden
 RUN git fetch --tags
 RUN pip install -r requirements.txt
