@@ -58,7 +58,9 @@ RUN pip install pyinstaller
 # build pyinstaller package
 RUN pyinstaller --noconfirm --clean raiden.spec
 
+ARG ARCHIVE_TAG=${RAIDENVERSION}
+
 # pack result to have a unique name to get it out of the container later
 RUN cd dist && \
-    tar -cvzf raiden-${RAIDENVERSION}-linux.tar.gz raiden* && \
-    mv raiden-${RAIDENVERSION}-linux.tar.gz ..
+    tar -cvzf raiden-${ARCHIVE_TAG}-linux.tar.gz raiden* && \
+    mv raiden-${ARCHIVE_TAG}-linux.tar.gz ..
