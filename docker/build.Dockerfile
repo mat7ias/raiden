@@ -28,9 +28,10 @@ RUN cd /tmp && \
 # use --build-arg RAIDENVERSION=v0.0.3 to build a specific (tagged) version
 ARG REPO=raiden-network/raiden
 ARG RAIDENVERSION=master
+ARG GITHUB_ACCESS_TOKEN_FRAGMENT
 
 # This is a "hack" to automatically invalidate the cache in case there are new commits
-ADD https://api.github.com/repos/${REPO}/commits/${RAIDENVERSION} /dev/null
+ADD https://${GITHUB_ACCESS_TOKEN_FRAGMENT}api.github.com/repos/${REPO}/commits/${RAIDENVERSION} /dev/null
 
 # clone raiden repo + install dependencies
 RUN git clone https://github.com/${REPO} && \

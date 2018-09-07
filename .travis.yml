@@ -42,6 +42,9 @@ env:
   - SYNAPSE_URL='https://github.com/matrix-org/synapse/tarball/master#egg=synapse'
   - SYNAPSE_SERVER_NAME='matrix.local.raiden'
   - COVERALLS_PARALLEL=true
+  # `GITHUB_ACCESS_TOKEN` - read only access token to increase GitHub API rate limits
+  # Format: `GITHUB_ACCESS_TOKEN=<username>:<token>`
+  - secure: "riRxis2NVGAjgl3jXOnMCXCpfWhOK7Q5B7CCRC0xPk+CyuHEOjIAvmueZwCrWt6i4jjlPeqpsLzDp7j56QG94hfGAs1sBq7aZQ6qVSqjCsj5IYPdAYRq8nivgHWjQuPoDWKsKOcEw44lUXUrWXvOf9T+AM+numz/feISdchqFr+OhVYv0g8mDQlFwAMcIwu4DpazECV/LlQxFR3iP7GDF6tU7NDx5uzCYzRU2vg4sSZWJJLHLs9gCpAqlEiKL3n5QhonQwJ7qbgOTlJaJNrI1qhOw29LjcVqIMxkM1VJ1hx61e55WzM/OquijMJCNrNVCQ8m3RP//bxoGoMrj9FFI+8qT9TSPjvSXWyZQxak30zZE7szF1Zfu/Cd9f56D/28leQ+KuJh8SvK53x04eNxn0y+amSElHlL1NgOJ86XNTdZM6xcYGEbt6Fy0Ia5CyGkUUw+gsLVAjSghC/iQsZgmXyjSsDCRBpYO79mR2r3S240Zb1DIhi9OX5W1IO6DOGlzjOdrRehmMZ2T4trM+Rz0q06g9D1Wxn69IP/wYACgydO0B55BjD6bEtspot/yh7aHH8MFEqeYLpskXwg4CjZ6HMfccfo/KM3kElVQpFQO3JCguhCX8zb3P4o49pInr6icDMBQfnDWkSDi1MCY8GnbTyB9dL1T9J7bTje7vaCvdk="
 cache:
   pip: true
   directories:
